@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energías Renovables</title>
+    <style>
+        /* Estilos CSS para la página */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1 {
+            font-size: 2rem;
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+		/* Estilos para botones */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        /* Estilos para formulario */
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        textarea {
+            resize: vertical;
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Energías Renovables</h1>
+    </header>
+    <div class="container">
+        <h2>¿Qué son las energías renovables?</h2>
+        <p>Las energías renovables son aquellas fuentes de energía que se reponen constantemente en la naturaleza. Estas incluyen la luz solar, el viento, la energía hidroeléctrica, la biomasa y la geotermia. A diferencia de los combustibles fósiles, su uso produce emisiones mucho más bajas y contribuye a la sostenibilidad del planeta.</p>
+        <h2>Tipos de energías renovables:</h2>
+        <ul>
+            <li>Energía solar: aprovecha la radiación solar para generar electricidad.</li>
+            <li>Energía eólica: utiliza la fuerza del viento para producir energía.</li>
+            <li>Energía hidroeléctrica: se obtiene del movimiento del agua en ríos y presas.</li>
+            <li>Energía de biomasa: proviene de materia orgánica como residuos agrícolas o forestales.</li>
+            <li>Energía geotérmica: utiliza el calor del interior de la Tierra.</li>
+        </ul>
+        <p>¡Contribuyamos al futuro sostenible utilizando energías limpias!</p>
+
+        <!-- Botón interactivo -->
+        <button class="btn">¡Descubre más!</button>
+		
+		<!-- Imagen de paneles solares -->
+        <img src="D:\Escritorio\panelesoslares.jpeg" alt="Paneles solares en un campo" />
+
+        <!-- Contador de visitas en JavaScript -->
+        <script>
+            // Verifica si existe una cookie para el contador
+            if (document.cookie.indexOf("visitas") === -1) {
+                // Si no existe, crea una cookie con valor 1
+                document.cookie = "visitas=1";
+            } else {
+                // Si existe, incrementa el valor de la cookie
+                const visitasAnteriores = parseInt(document.cookie.split("=")[1]);
+                const nuevasVisitas = visitasAnteriores + 1;
+                document.cookie = `visitas=${nuevasVisitas}`;
+            }
+
+            // Obtiene el valor actual de visitas
+            const visitasTotales = parseInt(document.cookie.split("=")[1]);
+            document.write(`<p>Visitas totales: ${visitasTotales}</p>`);
+        </script>
+    <!-- Formulario de contacto -->
+        <form action="enviar.php" method="post">
+            <h2>Contacto</h2>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+            <button class="btn" type="submit">Enviar</button>
+        </form>
+	</div>
+</body>
+</html>
