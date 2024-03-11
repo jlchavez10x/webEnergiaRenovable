@@ -121,5 +121,51 @@
             <button class="btn" type="submit">Enviar</button>
         </form>
 	</div>
+	<div class="container">
+        <h1>Calculadora de Energía Fotovoltaica</h1>
+        <p>Convierte entre diferentes unidades de energía para dimensionar tu sistema fotovoltaico:</p>
+        <label for="joules">Joules:</label>
+        <input type="number" id="joules" placeholder="Ingresa la cantidad en Joules">
+        <label for="kwh">kWh:</label>
+        <input type="number" id="kwh" placeholder="Ingresa la cantidad en kWh">
+        <label for="langley">Langley:</label>
+        <input type="number" id="langley" placeholder="Ingresa la cantidad en Langley">
+
+        <!-- Resultados de conversión -->
+        <div id="resultados"></div>
+
+        <!-- Script de JavaScript -->
+        <script>
+            const joulesInput = document.getElementById("joules");
+            const kwhInput = document.getElementById("kwh");
+            const langleyInput = document.getElementById("langley");
+            const resultadosDiv = document.getElementById("resultados");
+
+            // Función para convertir Joules a kWh
+            function joulesToKwh(joules) {
+                return joules / 3600000; // 1 kWh = 3,600,000 Joules
+            }
+
+            // Función para convertir Langley a Joules
+            function langleyToJoules(langley) {
+                return langley * 41840; // 1 Langley = 41,840 Joules
+            }
+
+            // Actualizar resultados al cambiar los valores
+            joulesInput.addEventListener("input", () => {
+                const joules = parseFloat(joulesInput.value);
+                const kwh = joulesToKwh(joules);
+                kwhInput.value = kwh.toFixed(2);
+            });
+
+            langleyInput.addEventListener("input", () => {
+                const langley = parseFloat(langleyInput.value);
+                const joules = langleyToJoules(langley);
+                joulesInput.value = joules.toFixed(2);
+                const kwh = joulesToKwh(joules);
+                kwhInput.value = kwh.toFixed(2);
+            });
+        </script>
+    </div>
 </body>
 </html>
